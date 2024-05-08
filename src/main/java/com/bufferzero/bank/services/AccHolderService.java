@@ -18,7 +18,7 @@ public class AccHolderService {
     private AccHolderRepo accHolderRepo;
 
     public ResponseEntity<Message> addAccount(AccHolderRequest accHolderRequest){
-        AccHolder accHolder = new AccHolder(accHolderRequest.getName(),accHolderRequest.getMobileNo(),accHolderRequest.getAccBalance());
+        AccHolder accHolder = new AccHolder(accHolderRequest.getName(),accHolderRequest.getMobileNo(),accHolderRequest.getAccBalance(), accHolderRequest.getEmail());
         accHolderRepo.save(accHolder);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(new Message("Account Created Successfully"));

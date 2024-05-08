@@ -17,17 +17,18 @@ public class AccHolder {
 
     private String name;
     private String mobileNo;
-
+    private String email;
     private double accBalance;
 
     public AccHolder() {
     }
 
-    public AccHolder( String name, String mobileNo, double accBalance) {
+    public AccHolder( String name, String mobileNo, double accBalance, String email) {
         this.accNo = CustomAccNoGenerator.genarateAccNo();
         this.name = name;
         this.mobileNo = mobileNo;
         this.accBalance = accBalance;
+        this.email = email;
     }
 
     public int getId() {
@@ -68,5 +69,13 @@ public class AccHolder {
 
     public void setAccBalance(double accBalance) {
         this.accBalance = accBalance;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
