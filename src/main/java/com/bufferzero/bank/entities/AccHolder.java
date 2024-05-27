@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
+import org.springframework.web.multipart.MultipartFile;
 //import jakarta.validation.constraints.Pattern;
 
 @Entity
@@ -15,20 +17,27 @@ public class AccHolder {
     private int id;
     private long accNo;
 
-    private String name;
+    private String firstName;
+
+    private String lastName;
     private String mobileNo;
     private String email;
     private double accBalance;
 
+    private String fileName;
+
+
     public AccHolder() {
     }
 
-    public AccHolder( String name, String mobileNo, double accBalance, String email) {
+    public AccHolder( String firstName, String lastName,String mobileNo, double accBalance, String email, String fileName) {
         this.accNo = CustomAccNoGenerator.genarateAccNo();
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName=lastName;
         this.mobileNo = mobileNo;
-        this.accBalance = accBalance;
         this.email = email;
+        this.accBalance = accBalance;
+        this.fileName = fileName;
     }
 
     public int getId() {
@@ -47,13 +56,6 @@ public class AccHolder {
         this.accNo = accNo;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getMobileNo() {
         return mobileNo;
@@ -78,4 +80,29 @@ public class AccHolder {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 }
+

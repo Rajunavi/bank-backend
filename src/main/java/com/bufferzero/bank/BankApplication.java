@@ -1,5 +1,8 @@
 package com.bufferzero.bank;
 
+import com.bufferzero.bank.repository.AccHolderRepo;
+import com.bufferzero.bank.services.AccHolderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,4 +13,6 @@ public class BankApplication {
 		SpringApplication.run(BankApplication.class, args);
 	}
 
-}
+	}
+
+
